@@ -9,6 +9,9 @@ function Square({ value, onSquareClick }) {
 }
 
 export default function Board() {
+  // Used to track who's turn is next
+  const [xIsNext, setxIsNext] = useState(true);
+  // Creates the squares need for the board and saves to state
   const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(idx) {
