@@ -15,9 +15,18 @@ export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(idx) {
+    // Ensures players can't overwrite a square if has already been used
+    if (squares[idx]) return;
     const nextSquare = squares.slice();
-    nextSquare[idx] = "X";
+
+    if (xIsNext) {
+      nextSquare[idx] = "X";
+    } else {
+      nextSquare[idx] = "O";
+    }
+
     setSquares(nextSquare);
+    setXIsNext(!xIsNext);
   }
 
   return (
