@@ -27,7 +27,7 @@ function Board({ xIsNext, squares, onPlay }) {
   if (winner) {
     status = `The winner is: ${winner}!`;
   } else {
-    status = `It's now ${xIsNext ? "X" : "O"}'s turn!`;
+    status = `It is now ${xIsNext ? "X" : "O"}'s turn!`;
   }
   return (
     <>
